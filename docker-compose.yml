@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  php-fpm:
+    build:
+      context: ./docker/php
+    volumes:
+      - ./:/app
+  db-pgsql:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: migrations
+      POSTGRES_PASSWORD: migrations
+      POSTGRES_USER: migrations
+    volumes:
+      - ./docker/db/data:/var/lib/postgresql/data:rw
+    ports:
+      - "5432:5432"

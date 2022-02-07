@@ -1,0 +1,5 @@
+{
+    "require": {
+        "doctrine/migrations": "2.3.5"
+    }
+}
